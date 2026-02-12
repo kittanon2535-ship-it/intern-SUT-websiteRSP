@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="th">
+ 
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ติดต่อเรา - อุทยานวิทยาศาสตร์ภูมิภาค ภาคตะวันออกเฉียงเหนือตอนล่าง</title>
+    <link rel="icon" type="image/png" href="../logo/NE2logo.png">
+    <link rel="stylesheet" href="../assets/css/contact.css"> 
+    <link rel="stylesheet" href="../assets/css/headerweb.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sui+Generis:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sui Generis', sans-serif;
+            margin: 0; 
+        }
+
+        h2 {
+            font-weight: 700;
+        }
+
+        p {
+            font-weight: 400;
+        }
+        
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lang-switch button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 1rem;
+            color: #333;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .lang-switch button.active {
+            color: #007bff;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            top: 100%;
+            left: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .dropdown-content a {
+            color: white !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+        .dropdown-content.show {
+            display: block;
+        }
+        
+        .form-message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 500;
+            display: none; 
+        }
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">
+            <img src="../logo/LogoMHESI.png" alt="Extra Logo" class="logo1">
+            <img src="../logo/logo.png" alt="Logo" class="logo2" id="mainLogo">
+        </a>
+
+        <nav class="navigation">
+            <a href="../index.html" data-th="หน้าแรก" data-en="Home">หน้าแรก</a>
+
+            <div class="dropdown">
+                <a href="../pages/abousus.html" data-th="เกี่ยวกับเรา" data-en="About us" onclick="toggleDropdown(event, 'aboutUsDropdown')">เกี่ยวกับเรา <span style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="aboutUsDropdown">
+                    <li><a href="../pages/abousus.html">เกี่ยวกับเรา</a></li>
+                    <li><a href="../pages/workteam.html">คณะทำงาน</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <a href="../pages/service.html" data-th="การบริการและการสนับสนุน" data-en="Service&Support" onclick="toggleDropdown(event, 'serviceDropdown')">การบริการและการสนับสนุน <span style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="serviceDropdown">
+                    <li><a href="../pages/servicestartup.html">การสร้าง Startup</a></li>
+                    <li><a href="../pages/servicesme.html">ส่งเสริม SME</a></li>
+                    <li><a href="../pages/servicecommunity.html">สนับสนุนวิสาหกิจชุมชน</a></li>
+                    <li><a href="../pages/serviceenterprise.html">เพิ่มศักยภาพ Enterprise</a></li>
+                    <li><a href="../pages/servicelab.html">ห้องปฏิบัติการ</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <a href="../pages/metetingroom.html" data-th="พื้นที่การให้บริการ" data-en="Meeting Room" onclick="toggleDropdown(event, 'meetingRoomDropdown')">พื้นที่การให้บริการ <span style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="meetingRoomDropdown">
+                    <li><a href="../pages/meetingroomdetails.html">การให้บริการ</a></li>
+                    <li><a href="https://forms.gle/tcQNc4rg1ea9xnsM7 ">แบบประเมินความพึงพอใจห้องประชุม</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <a href="#" data-th="ติดต่อเสนอแนะ" data-en="Contact with us" onclick="toggleDropdown(event, 'contactDropdown')">ติดต่อเสนอแนะ <span style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="contactDropdown">
+                    <li><a href="../pages/contact.html">ติดต่อเรา</a></li>
+                    <li><a href="../pages/staffresearch.html">บุคลากร</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <a href="#" data-th="ข่าวสาร" data-en="News" onclick="toggleDropdown(event, 'newsDropdown')">ข่าวสาร <span style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="newsDropdown">
+                    <li><a href="../pages/news.html">ข่าวสารทั่วไป</a></li>
+                    <li><a href="../pages/newss.html">ประกาศ/คำสั่ง</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <a href="#" data-th="สำหรับเจ้าหน้าที่/สมาชิก" data-en="Staff/Member" onclick="toggleDropdown(event, 'staffMemberDropdown')">สำหรับเจ้าหน้าที่/สมาชิก <span style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="staffMemberDropdown">
+                    <li><a href="https://rspne2.sut.ac.th/mis/">แจ้งซ่อม</a></li>
+                    <li><a href="https://rspne2.sut.ac.th/mis/">ให้บริการพื้นที่</a></li>
+                    <li><a href="https://rspne2.sut.ac.th/mis/">จองห้องประชุม</a></li>
+                </ul>
+            </div>
+
+            <div class="lang-switch">
+                <button id="langTH" class="active">TH</button> | <button id="langEN">EN</button>
+            </div>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+    <main class="contact-page-container">
+    <div class="contact-hero-section">
+            <div class="premium-label" data-aos-once="false" data-aos="fade-right" data-aos-delay="400">
+                <span class="gold-line" data-aos-once="false" data-aos="zoom-in" data-aos-delay="500"></span>
+                <span class="label-text" data-aos-once="false" data-aos="fade-right" data-aos-delay="600">WE'RE HERE TO LISTEN</span>
+            </div>
+            <h1 class="display-title" data-aos-once="false" data-aos="fade-left" data-aos-delay="700">CONTACT<br>US</h1>
+            <div class="bottom-accent" data-aos-once="false" data-aos="fade-right" data-aos-delay="800"></div>
+        </div>
+
+    <div class="contact-content-wrapper">
+        
+        <div class="map-and-info-section">
+            <div class="map-container" data-aos-once="false" data-aos="fade-right" data-aos-delay="1200">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15383.136892548074!2d102.01258123235738!3d14.881476902209774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311910815e12817d%3A0xc02e07971e988265!2sSuranaree%20University%20of%20Technology!5e0!3m2!1sen!2sth!4v1703666000000!5m2!1sen!2sth" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="contact-details-box" data-aos-once="false" data-aos="fade-up" data-aos-delay="1400">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt contact-icon"></i>
+                    <div class="contact-text">
+                        <strong>โทรศัพท์:</strong>
+                        <p>044-223-600</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <div class="contact-text">
+                        <strong>อีเมล:</strong>
+                        <p><a href="mailto:nesp.nak@gmail.com">nesp.nak@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <div class="contact-text">
+                        <strong>ที่อยู่:</strong>
+                        <p>อาคารอุทยานวิทยาศาสตร์ภูมิภาค (ภาคตะวันออกเฉียงเหนือตอนล่าง) มหาวิทยาลัยเทคโนโลยีสุรนารี</p>
+                        <p>111 ถ.มหาวิทยาลัย ต.สุรนารี อ.เมือง จ.นครราชสีมา 30000</p>
+                    </div>
+                </div>
+            </div>
+        </div> <div class="contact-form-section" data-aos-once="false" data-aos="fade-left" data-aos-delay="1600">
+            <form id="contactForm" class="contact-form">
+                <label for="name">ชื่อผู้ติดต่อ</label>
+                <input type="text" id="name" name="name" required placeholder="กรุณากรอกข้อมูล">
+
+                <label for="email">อีเมลติดต่อ</label>
+                <input type="email" id="email" name="email" required placeholder="กรุณากรอกข้อมูล">
+                
+                <label for="phone">เบอร์โทรศัพท์ติดต่อ</label>
+                <input type="tel" id="phone" name="phone" required placeholder="กรุณากรอกข้อมูล">
+                
+                <label for="subject">หัวข้อ</label>
+                <input type="text" id="subject" name="subject" required placeholder="กรุณากรอกข้อมูล">
+
+                <label for="message">ข้อความ</label>
+                <textarea id="message" name="message" required placeholder="กรุณากรอกข้อมูล" rows="6"></textarea>
+
+                <button type="submit" class="submit-button">ส่งข้อความ</button>
+                
+                <div id="formMessage" class="form-message"></div>
+            </form>
+        </div> 
+    </div> 
+</main> 
+
+    <footer>
+        <div class="footer-container">
+            <div class="contact-info">
+                <h2>FOLLOW US</h2>
+                <p><strong>Regional Science Park Northeast 2, Suranaree University of Technology : RSP</strong></p>
+                <p>Regional Science Park (Northeast 2) Building, Nakhon Ratchasima</p>
+                <p>111, University Road, Suranaree Subdistrict, Mueang District, Nakhon Ratchasima Province 30000</p>
+
+                <div class="contact-detail">
+                    <i class="fas fa-phone-alt"></i> 044-223-600
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-envelope"></i> <a href="mailto:info@step.cmu.ac.th">nesp.nak@gmail.com</a>
+                </div>
+                <div class="contact-underline"></div>
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/RSPNortheast2/?locale=th_TH"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://maps.app.goo.gl/YourMapLink"><i class="fas fa-map-marker-alt"></i></a>
+                </div>
+            </div>
+
+             <div class="footer-actions">
+     <button class="action-btn customer" onclick="window.location.href='contact.html'">
+         <i class="fas fa-lightbulb"></i> ข้อเสนอแนะ/ร้องเรียน
+         <br>
+             <span>VOICE OF CUSTOMER</span>
+         </button>
+         </div> 
+        </div>
+
+        <div class="copyright">
+            ©2025 Copyright RSP Regional Science Park Northeast 2. All Rights Reserved
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const navList = document.querySelector('.nav-list');
+            navList.classList.toggle('active');
+        }
+        function toggleDropdown(event, dropdownId) {
+            event.preventDefault();
+            document.querySelectorAll('.dropdown-content').forEach(function(el) {
+                if (el.id !== dropdownId) {
+                    el.classList.remove('show');
+                }
+            });
+            document.getElementById(dropdownId).classList.toggle('show');
+        }
+        window.onclick = function(event) {
+            if (!event.target.closest('.dropdown')) { 
+                 var dropdowns = document.getElementsByClassName("dropdown-content");
+                 for (var i = 0; i < dropdowns.length; i++) {
+                     var openDropdown = dropdowns[i];
+                     if (openDropdown.classList.contains('show')) {
+                         openDropdown.classList.remove('show');
+                     }
+                 }
+             }
+        }
+    </script>
+    
+    <script src="../assets/js/contact.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-out-back' 
+            });
+        });
+    </script>
+</body>
+</html>

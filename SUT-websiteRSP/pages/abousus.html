@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="th">
+ 
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>อุทยานวิทยาศาสตร์ภูมิภาค ภาคตะวันออกเฉียงเหนือตอนล่าง (จังหวัดนครราชสีมา)</title>
+    <link rel="icon" type="image/png" href="../logo/NE2logo.png">
+    <link rel="stylesheet" href="../assets/css/abousus.css">
+    <link rel="stylesheet" href="../assets/css/headerweb.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sui Generis:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sui Generis', sans-serif;
+            margin: 20px;
+        }
+        h1 {
+             font-family: 'Sui Generis', sans-serif;
+        }
+        h2 {
+            font-weight: 700;
+        }
+
+        p {
+            font-weight: 400;
+        }
+        span {
+            font-family: 'Sui Generis', sans-serif;
+        }
+
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lang-switch button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 1rem;
+            color: #333;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .lang-switch button.active {
+            color: #000000;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            position: relative; 
+            display: inline-block; 
+        }
+
+        .dropdown-content {
+            display: none; 
+            position: absolute;
+            background-color: #333; 
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            top: 100%; 
+            left: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .dropdown-content a {
+             color: white !important; 
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            white-space: nowrap; 
+        }
+
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+        .dropdown-content.show {
+            display: block; 
+        }
+    .hero-section {
+            width: 100%;
+            height: 100vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #f0f0f0; 
+            position: relative; 
+            overflow: hidden; 
+            padding-top: 100px; 
+            box-sizing: border-box;
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('WebRSP21.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1; 
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2; 
+            color: #333; 
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 4em; 
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-content h1 .innovation-word {
+            color: #ff6600; 
+        }
+
+        .hero-logo-container {
+            margin-top: 40px;
+            padding: 10 px;
+            background-color: rgba(255, 255, 255, 0); 
+            border-radius: 10px;
+        }
+
+        .hero-logo {
+            max-width: 250px; 
+            height: auto;
+        }
+
+        .about-intro-section {
+            padding: 10px 5%;
+            background-color: transparent;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0; 
+            transform: translateY(50px); 
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .about-intro-section.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about-intro-section h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .about-intro-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .vmc-section {
+            padding: 80px 5%;
+            background-color: transparent;  
+            text-align: center;
+        }
+
+        .vmc-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .vmc-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            padding: 40px 30px;
+            flex: 1;
+            min-width: 300px;
+            max-width: 380px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0; 
+            transform: translateY(50px); 
+        }
+
+        .vmc-card.slide-up {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .vmc-card:nth-child(1) { transition-delay: 0.1s; }
+        .vmc-card:nth-child(2) { transition-delay: 0.2s; }
+        .vmc-card:nth-child(3) { transition-delay: 0.3s; }
+        .vmc-card.core-values ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            text-align: left; 
+            width: 100%;
+        }
+
+        .vmc-card.core-values ul li {
+            margin-bottom: 15px;
+            font-size: 1em;
+            color: #555;
+            padding-left: 10px;
+            position: relative;
+        }
+        .vmc-card.core-values ul li strong {
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .vmc-card.core-values ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .vmc-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .vmc-card .icon {
+            width: 80px;
+            height: 80px;
+            background-color: #ffcc33; 
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 2.5em;
+            color: #333; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .vmc-card h3 {
+            font-size: 1.8em;
+            color: #ff6600; 
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .vmc-card p {
+            font-size: 1em;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .workflow-section {
+            padding: 80px 5%;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .workflow-section h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 40px;
+            opacity: 0; 
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .workflow-section h2.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .workflow-image-container {
+            max-width: 1000px; 
+            margin: 0 auto;
+            opacity: 0; 
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s; 
+        }
+
+        .workflow-image-container.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .workflow-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1          n {
+                font-size: 2.5em;
+            }
+            .hero-logo-container {
+                margin-top: 20px;
+            }
+            .hero-logo {
+                max-width: 180px;
+            }
+            .about-intro-section, .vmc-section, .workflow-section {
+                padding: 50px 3%;
+            }
+            .vmc-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .vmc-card {
+                min-width: unset;
+                width: 90%;
+                max-width: 400px;
+            }
+            .workflow-section h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="#" class="logo">
+        <img src="../logo/LogoMHESI.png" alt="Extra Logo" class="logo1">
+        <img src="../logo/logo.png" alt="Logo" class="logo2" id="mainLogo">
+    </a>
+
+    <nav class="navigation">
+        <a href="../index.html" data-th="หน้าแรก" data-en="Home">หน้าแรก</a>
+        
+        <div class="dropdown">
+                <a href="../pages/abousus.html" data-th="เกี่ยวกับเรา" data-en="About us" onclick="toggleDropdown(event, 'aboutUsDropdown')">เกี่ยวกับเรา <span style="font-size: 0.7em;">▼</span></a>
+                <ul class="dropdown-content" id="aboutUsDropdown">
+                    <li><a href="../pages/abousus.html">เกี่ยวกับเรา</a></li>
+                    <li><a href="../pages/workteam.html">คณะทำงาน</a></li>
+                </ul>
+            </div>
+        
+        <div class="dropdown">
+                <a href="../pages/service.html" data-th="การบริการและการสนับสนุน" data-en="Service&Support" onclick="toggleDropdown(event, 'serviceDropdown')">การบริการและการสนับสนุน <span style="font-size: 0.7em;">▼</span></a>
+                <ul class="dropdown-content" id="serviceDropdown">
+                    <li><a href="../pages/servicestartup.html">การสร้าง Startup</a></li>
+                    <li><a href="../pages/servicesme.html">ส่งเสริม SME</a></li>
+                    <li><a href="../pages/servicecommunity.html">สนับสนุนวิสาหกิจชุมชน</a></li>
+                    <li><a href="../pages/serviceenterprise.html">เพิ่มศักยภาพ Enterprise</a></li>
+                    <li><a href="../pages/servicelab.html">ห้องปฏิบัติการ</a></li>
+                </ul>
+            </div>
+
+        <div class="dropdown">
+                <a href="pages/metetingroom.html" data-th="พื้นที่การให้บริการ" data-en="Meeting Room" onclick="toggleDropdown(event, 'meetingRoomDropdown')">พื้นที่การให้บริการ <span style="font-size: 0.7em;">▼</span></a>
+                <ul class="dropdown-content" id="meetingRoomDropdown">
+                    <li><a href="../pages/meetingroomdetails.html">การให้บริการ</a></li>
+                    <li><a href="https://forms.gle/tcQNc4rg1ea9xnsM7">แบบประเมินความพึงพอใจห้องประชุม</a></li>
+                </ul>
+            </div>
+        
+        <div class="dropdown">
+                <a href="#" data-th="ติดต่อเสนอแนะ" data-en="Contact with us" onclick="toggleDropdown(event, 'staffMemberDropdown')">ติดต่อเสนอแนะ <span style="font-size: 0.7em;">▼</span></a>
+                <ul class="dropdown-content" id="staffMemberDropdown">
+                    <li><a href="../pages/contact.html">ติดต่อเรา</a></li>
+                    <li><a href="../pages/staffresearch.html">บุคลากร</a></li>
+                </ul>
+            </div>
+
+        <div class="dropdown">
+                <a href="#" data-th="ข่าวสาร" data-en="News" onclick="toggleDropdown(event, 'newsDropdown')">ข่าวสาร <span style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="newsDropdown">
+                    <li><a href="../pages/news.html">ข่าวสารทั่วไป</a></li>
+                    <li><a href="../pages/newss.html">ประกาศ/คำสั่ง</a></li>
+                </ul>
+            </div>
+        
+        <div class="dropdown">
+                <a href="#" data-th="สำหรับเจ้าหน้าที่/สมาชิก" data-en="Staff/Member" onclick="toggleDropdown(event, 'staffMemberDropdown')">สำหรับเจ้าหน้าที่/สมาชิก <span style="font-size: 0.7em;">▼</span></a>
+                <ul class="dropdown-content" id="staffMemberDropdown">
+                    <li><a href="https://rspne2.sut.ac.th/mis/">แจ้งซ่อม</a></li>
+                    <li><a href="https://rspne2.sut.ac.th/mis/">ให้บริการพื้นที่</a></li>
+                    <li><a href="https://rspne2.sut.ac.th/mis/">จองห้องประชุม</a></li>
+                </ul>
+            </div>
+
+        <div class="lang-switch">
+            <button id="langTH" class="active">TH</button> | <button id="langEN">EN</button>
+        </div>
+    </nav> 
+    <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+</header>
+
+<section class="hero-section">
+        <div class="hero-bg-image"></div> <div class="hero-content">
+            <h1>TOTAL <br><span class="innovation-word">SOLUTION</span> <br>FOR INNOVATION</h1>
+            <div class="hero-logo-container scroll-animate">
+                <img src="../logo/Logo.png" alt="Your Company Logo" class="hero-logo">
+            </div>
+        </div>
+    </section>
+
+    <section class="aboutsection">
+    <div class="content-layout">
+        <div class="video-container">
+            <div class="video-box" data-aos="fade-right" data-aos-delay="300">
+                <video id="infoVideo" muted playsinline>
+                    <source src="../Video/infovideo.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="text-container">
+            <h2 class="modern-header" data-aos="fade-down" data-aos-delay="200" data-th="อุทยานวิทยาศาสตร์ภูมิภาค ภาคตะวันออกเฉียงเหนือ 2 (จังหวัดนครราชสีมา)" data-en="Regional Science Park Northeast 2 (Nakhon Ratchasima Province)"></h2></h2>
+            
+            <div class="description-box" data-aos="fade-up" data-aos-delay="500">
+                <p data-th="เราเป็นหน่วยงานด้านวิทยาศาสตร์และนวัตกรรม ที่ตั้งขึ้นเพื่อช่วยให้ธุรกิจ 
+ผู้ประกอบการ และชุมชนในภาคตะวันออกเฉียงเหนือตอนล่าง เข้าถึงความรู้ 
+ผู้เชี่ยวชาญ และเครื่องมือวิทยาศาสตร์จากมหาวิทยาลัยได้ง่ายขึ้น"
+                   data-en="We are a science and innovation agency established to help businesses, entrepreneurs, and communities in the Lower Northeast access knowledge, experts, and scientific tools from universities more easily.">
+                </p>
+                <p data-th="เราเกิดขึ้นเพื่อเป็น “ตัวกลางเชื่อมโยง” ระหว่างมหาวิทยาลัยกับภาคธุรกิจและสังคม ช่วยนำผลงานวิจัย เทคโนโลยี และนวัตกรรมไปพัฒนาสินค้า บริการ และแก้ปัญหาให้ธุรกิจเติบโต รวมทั้งเพิ่มศักยภาพเศรษฐกิจ
+ของภูมิภาค"
+                   data-en="We serve as a 'bridge' between universities and the business sector. We help bring research, technology, and innovation to develop products, services, and solve business problems to drive growth and regional economic potential.">
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="vmc-section">
+        <div class="vmc-container">
+            <div class="vmc-card scroll-animate">
+                <div class="icon">
+                <img src="../logo/vision.png" alt="Vision Icon" style="width: 50px; height: auto;"></div>
+                <h3>VISION</h3>
+                <p data-th="วิสัยทัศน์" data-en="VISION"></p>
+                <p data-th="เป็นกลไกสำคัญในการนำพลังเครือข่ายมหาวิทยาลัยเพื่อขับเคลื่อนและยกระดับเศรษฐกิจและสังคมในภูมิภาคด้วยนวัตกรรม" data-en="An intermediary organization that serves as a National Platform to promote the utilization of R&D infrastructure for the development of the economy and society at the regional, provincial, and national levels."></p>
+                <p></p>
+            </div>
+
+            <div class="vmc-card scroll-animate">
+                <div class="icon">
+                <img src="../logo/value.png" alt="Vision Icon" style="width: 50px; height: auto;"></div>
+                <h3>VALUES</h3>
+                <p data-th="ค่านิยม" data-en="VALUES"></p>
+                <p data-th="SYNERGY รู้จักและเชื่อมโยงหน่วยงานในระบบนิเวศนวัตกรรมเพื่อการนำเทโนโลยีไปใช้ประโยชน์ในวงกว้าง" data-en="1. Create a National Platform with key players participating in the operations."></p>
+                <p data-th="OPPORTUITY มองหาและสร้างโอกาสในปัจจุบัน และอนาคตเพื่อขับเคลื่อนธุรกิจฐานนวัตกรรม (IDE) ให้เกิดผลกระทบเชิงบวกต่อเศรษฐกิจและสังคม" data-en="2. Develop plans to promote and accelerate the development/utilization of innovations by sector and area."> </p>
+                <p data-th="CREATIVITY  ใช้ความคิดสร้างสรรค์เพื่อแก้ไขปัญหาด้านองค์ความรู็และเทคโนโลยี" data-en="3. Develop guidelines for organizational restructuring."></p>
+            </div>
+
+            <div class="vmc-card scroll-animate">
+                <div class="icon">
+                <img src="../logo/mission.png" alt="Vision Icon" style="width: 50px; height: auto;"></div>
+                <h3>MISSION</h3>
+                <p data-th="พันธกิจ" data-en="MISSION"></p>
+                <p data-th="ผสานและเชื่อมโยงภาคส่วนต่างๆ" data-en="1. Create a National Platform with key players participating in the operations."></p>
+                <p data-th="เป็นแกนกลางในภูมิภาคเพื่อขับเคลื่อนนโยบาย" data-en="2. Develop plans to promote and accelerate the development/utilization of innovations by sector and area."> </p>
+                <p data-th="สนับสนุนและเอื้ออำนวยแก่หน่วยเศรษฐกิจทุกระดับ" data-en="3. Develop guidelines for organizational restructuring."></p>
+            </div>
+
+        </div>
+    </section>
+
+   <section class="workflow-section">
+    <h2 data-th="โครงสร้างองค์กร" data-en="Organizational Structure" class="scroll-animate">โครงสร้างองค์กร</h2>
+    
+    <div class="org-chart-container scroll-animate">
+        <div class="management-block">
+            <div class="node pill has-avatar" data-aos="fade-up" data-aos-delay="200">
+                <div class="avatar-bubble">
+                    <img src="../workteam/bgpro1.png" alt="Director">
+                </div>
+                <strong>ผู้อำนวยการ</strong><br>
+                <span>ผศ.ดร.ปภากร พิทยชวาล</span>
+            </div>
+        </div>
+
+        <div class="line-v" data-aos="fade-up" data-aos-delay="300"></div>
+
+        <div class="assistant-container">
+            <div class="assistant-grid">
+                <div class="node pill has-avatar" data-aos="fade-up" data-aos-delay="400">
+                    <div class="avatar-bubble">
+                        <img src="../workteam/bgpro3.png" alt="Asst 1">
+                    </div>
+                    <strong>ผู้ช่วยผู้อำนวยการ</strong><br>
+                    <span>อาจารย์ ดร.วัชรพงษ์ ปะตังทะโล</span>
+                </div>
+                <div class="node pill has-avatar" data-aos="fade-up" data-aos-delay="500">
+                    <div class="avatar-bubble">
+                        <img src="../workteam/bgpro2.png" alt="Asst 2">
+                    </div>
+                    <strong>ผู้ช่วยผู้อำนวยการ</strong><br>
+                    <span>อาจารย์ ดร.ฉัตรชัย พิศพล</span>
+                </div>
+                <div class="node pill has-avatar" data-aos="fade-up" data-aos-delay="600">
+                    <div class="avatar-bubble">
+                        <img src="../workteam/bgpro4.png" alt="Asst 3">
+                    </div>
+                    <strong>ผู้ช่วยผู้อำนวยการ</strong><br>
+                    <span>อาจารย์ ดร.วรรณภา น่าบุรณะ</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="line-v" data-aos="fade-up" data-aos-delay="700"></div>
+        <div class="line-h-container" data-aos="fade-up" data-aos-delay="800">
+            <div class="line-h" data-aos="fade-up" data-aos-delay="900"></div>
+        </div>
+ 
+        <div class="units-grid" data-aos="fade-up" data-aos-delay="1000">
+            <a href="../pages/workteam.html#network-unit" class="unit-card">หน่วยบริหารงานกลาง<br>และพัฒนาโครงสร้างพื้นฐาน</a>
+            <a href="../pages/workteam.html#marketing-unit" class="unit-card">หน่วยการตลาด บริการลูกค้า<br>และประชาสัมพันธ์</a>
+            <a href="../pages/workteam.html#ikd-unit" class="unit-card">หน่วยบริการนวัตกรรม<br>และคีย์แอคเคานต์ (IKD)</a>
+            <a href="../pages/workteam.html#networknia-unit" class="unit-card">หน่วยประสานงานเครือข่ายฯ<br>(จ.นครราชสีมา)</a>
+            <a href="../pages/workteam.html#bcd-unit" class="unit-card">หน่วยพัฒนาธุรกิจ<br>และคลัสเตอร์นวัตกรรม (BCD)</a>
+            <a href="../pages/workteam.html#nia-unit" class="unit-card">หน่วยสนับสนุนการปฏิบัติการ<br>อว. ส่วนภูมิภาค</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="contact-info">
+            <h2>FOLLOW US</h2>
+            
+            <p><strong>Regional Science Park Northeast 2, Suranaree University of Technology : RSP</strong></p>
+            <p>Regional Science Park (Northeast 2) Building, Nakhon Ratchasima</p>
+            <p>111, University Road, Suranaree Subdistrict, Mueang District, Nakhon Ratchasima Province 30000</p>
+
+            <div class="contact-detail">
+                <i class="fas fa-phone-alt"></i> 044-223-600
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-envelope"></i> <a href="mailto:info@step.cmu.ac.th">nesp.nak@gmail.com</a>
+            </div>
+            <div class="contact-underline"></div>
+
+            <div class="social-icons">
+                    <a href="https://www.facebook.com/RSPNortheast2/?locale=th_TH"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.google.com/maps/place/%E0%B8%AD%E0%B8%B8%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B9%8C+%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B8%B2/@14.8718256,102.0193393,17z/data=!4m14!1m7!3m6!1s0x311eada4f886aa9d:0xd9c56ab21fdcc998!2z4Lit4Li44LiX4Lii4Liy4LiZ4Lin4Li04LiX4Lii4Liy4Lio4Liy4Liq4LiV4Lij4LmMIOC4meC4hOC4o-C4o-C4suC4iuC4quC4teC4oeC4sg!8m2!3d14.8718256!4d102.0219142!16s%2Fg%2F11fnr2xvb_!3m5!1s0x311eada4f886aa9d:0xd9c56ab21fdcc998!8m2!3d14.8718256!4d102.0219142!16s%2Fg%2F11fnr2xvb_?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D"><i class="fas fa-map-marker-alt"></i></a>
+                </div>
+            </div>
+
+        <div class="footer-actions">
+    <button class="action-btn customer" onclick="window.location.href='contact.html'">
+        <i class="fas fa-lightbulb"></i> ข้อเสนอแนะ/ร้องเรียน
+        <br>
+            <span>VOICE OF CUSTOMER</span>
+        </button>
+        </div>  
+    </div>
+
+    <div class="copyright">
+        &copy;2025 Copyright RSP Regional Science Park Northeast 2. All Rights Reserved
+    </div>
+</footer>
+    <script>
+        function toggleMenu() {
+            const navList = document.querySelector('.nav-list');
+            navList.classList.toggle('active');
+        }
+    </script>
+    <script>
+        function toggleDropdown(event, dropdownId) {
+            event.preventDefault(); 
+            document.querySelectorAll('.dropdown-content').forEach(function(el) {
+                if (el.id !== dropdownId) {
+                    el.classList.remove('show');
+                }
+            });
+            document.getElementById(dropdownId).classList.toggle('show');
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown a')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+        <script src="../assets/js/abousus.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-out-back' 
+            });
+        });
+    </script>
+    </body>
+    </html>
+

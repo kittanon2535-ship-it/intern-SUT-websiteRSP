@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="th">
+ 
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title data-th="สร้าง Startup | RSP" data-en="Create Startup | RSP">สร้าง Startup | RSP</title>
+    <link rel="icon" type="image/png" href="../logo/NE2logo.png">
+    <link rel="stylesheet" href="../assets/css/news.css">
+    <link rel="stylesheet" href="../assets/css/headerweb.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sui+Generis:wght@300;400;500;600;700&display=swap"rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sui Generis', sans-serif;
+            margin: 0; 
+        }
+
+        h2 {
+            font-weight: 700;
+        }
+
+        p {
+            font-weight: 400;
+        }
+
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lang-switch button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 1rem;
+            color: #333;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .lang-switch button.active {
+            color: #000000;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            top: 100%;
+            left: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .dropdown-content a {
+            color: white !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+        .dropdown-content.show {
+            display: block;
+        }
+
+        .detail-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 80px;
+            background: transparent;
+
+        }
+        
+        .back-button {
+            background: transparent;
+            color: rgb(46, 46, 46);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px; 
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-size: 1em;
+            
+        }
+    
+        .detail-title {
+            color: #3a3a3a; 
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <img src="../logo/LogoMHESI.png" alt="Extra Logo" class="logo1">
+            <img src="../logo/logo.png" alt="Logo" class="logo2" id="mainLogo">
+        </a>
+
+        <nav class="navigation">
+            <a href="../index.html" data-th="หน้าแรก" data-en="Home">หน้าแรก</a>
+
+            <div class="dropdown">
+                <a href="../pages/abousus.html" data-th="เกี่ยวกับเรา" data-en="About us"
+                    onclick="toggleDropdown(event, 'aboutUsDropdown')">เกี่ยวกับเรา <span style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="aboutUsDropdown">
+                    <li><a href="../pages/abousus.html">เกี่ยวกับเรา</a></li>
+                    <li><a href="../pages/workteam.html">คณะทำงาน</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <a href="../pages/service.html" data-th="การบริการและการสนับสนุน" data-en="Service&Support"
+                    onclick="toggleDropdown(event, 'serviceDropdown')">การบริการและการสนับสนุน <span
+                        style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="serviceDropdown">
+                    <li><a href="../pages/servicestartup.html">การสร้าง Startup</a></li>
+                    <li><a href="../pages/servicesme.html">ส่งเสริม SME</a></li>
+                    <li><a href="../pages/servicecommunity.html">สนับสนุนวิสาหกิจชุมชน</a></li>
+                    <li><a href="../pages/serviceenterprise.html">เพิ่มศักยภาพ Enterprise</a></li>
+                    <li><a href="../pages/servicelab.html">ห้องปฏิบัติการ</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <a href="../pages/metetingroom.html" data-th="พื้นที่การให้บริการ" data-en="Meeting Room"
+                    onclick="toggleDropdown(event, 'meetingRoomDropdown')">พื้นที่การให้บริการ <span
+                        style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="meetingRoomDropdown">
+                    <li><a href="../pages/meetingroomdetails.html">การให้บริการ</a></li>
+                    <li><a href="https://forms.gle/tcQNc4rg1ea9xnsM7">แบบประเมินความพึงพอใจห้องประชุม</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <a href="#" data-th="ติดต่อเสนอแนะ" data-en="Contact with us" onclick="toggleDropdown(event, 'contactDropdown')">ติดต่อเสนอแนะ <span style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="contactDropdown">
+                    <li><a href="../pages/contact.html">ติดต่อเรา</a></li>
+                    <li><a href="../pages/staffresearch.html">บุคลากร</a></li>
+                </ul>
+            </div> 
+
+            <div class="dropdown">
+                <a href="#" data-th="ข่าวสาร" data-en="News" onclick="toggleDropdown(event, 'newsDropdown')">ข่าวสาร <span style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="newsDropdown">
+                    <li><a href="../pages/news.html">ข่าวสารทั่วไป</a></li>
+                    <li><a href="../pages/newss.html">ประกาศ/คำสั่ง</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <a href="#" data-th="สำหรับเจ้าหน้าที่/สมาชิก" data-en="Staff/Member"
+                    onclick="toggleDropdown(event, 'staffMemberDropdown')">สำหรับเจ้าหน้าที่/สมาชิก <span
+                        style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="staffMemberDropdown">
+                    <li><a href="https://rspne2.sut.ac.th/mis/">แจ้งซ่อม</a></li>
+                    <li><a href="https://rspne2.sut.ac.th/mis/">ให้บริการพื้นที่</a></li>
+                    <li><a href="https://rspne2.sut.ac.th/mis/">จองห้องประชุม</a></li>
+                </ul>
+            </div>
+
+            <div class="lang-switch">
+                <button id="langTH" class="active">TH</button> | <button id="langEN">EN</button>
+            </div>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+    
+    <div class="content-wrapper">
+    <div id="list-view">
+        <div class="lab-header-container"data-aos="fade-down" data-aos-delay="200"> 
+            <div class="header-text-group">
+                <h1 class="header-title" data-aos="fade-left" data-aos-delay="1000" data-th="ข่าวสาร" data-en="News">ข่าวสาร</h1>
+                <p class="header-subtitle" data-aos="fade-left" data-aos-delay="1200">อัปเดตความเคลื่อนไหว กิจกรรมสำคัญ และข่าวสารล่าสุดจากองค์กร เพื่อก้าวทันทุกนวัตกรรมและการเปลี่ยนแปลง</p>
+            </div>
+            
+            <div class="search-section" data-aos="fade-left" data-aos-delay="1600">
+                <div class="search-wrapper" id="search-wrapper">
+                    <input type="text" id="search-input" placeholder="ค้นหาชื่อ, วันที่...">
+                    <button id="search-toggle" class="search-icon-btn">
+                    <i class="fas fa-search">🔍</i> </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div id="project-list" class="project-grid">
+                </div>
+            <div id="status-message" class="status">กำลังโหลดข้อมูล...</div>
+        </div>
+    </div>
+
+    <div id="detail-view" style="display: none;"></div>
+</div>
+
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div> 
+
+    <footer>
+        <div class="footer-container">
+            <div class="contact-info">
+                <h2>FOLLOW US</h2>
+
+                <p><strong>Regional Science Park Northeast 2, Suranaree University of Technology : RSP</strong></p>
+                <p>Regional Science Park (Northeast 2) Building, Nakhon Ratchasima</p>
+                <p>111, University Road, Suranaree Subdistrict, Mueang District, Nakhon Ratchasima Province 30000</p>
+
+                <div class="contact-detail">
+                    <i class="fas fa-phone-alt"></i> 044-223-600
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-envelope"></i> <a href="mailto:info@step.cmu.ac.th">nesp.nak@gmail.com</a>
+                </div>
+                <div class="contact-underline"></div>
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/RSPNortheast2/?locale=th_TH"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.google.com/maps/place/%E0%B8%AD%E0%B8%B8%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B9%8C+%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B8%B2/@14.8718256,102.0193393,17z/data=!4m14!1m7!3m6!1s0x311eada4f886aa9d:0xd9c56ab21fdcc998!2z4Lit4Li44LiX4Lii4Liy4LiZ4Lin4Li04LiX4Lii4Liy4Lio4Liy4Liq4LiV4Lij4LmMIOC4meC4hOC4o-C4o-C4suC4iuC4quC4teC4oeC4sg!8m2!3d14.8718256!4d102.0219142!16s%2Fg%2F11fnr2xvb_!3m5!1s0x311eada4f886aa9d:0xd9c56ab21fdcc998!8m2!3d14.8718256!4d102.0219142!16s%2Fg%2F11fnr2xvb_?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D"><i class="fas fa-map-marker-alt"></i></a>
+                </div>
+            </div>
+
+             <div class="footer-actions">
+    <button class="action-btn customer" onclick="window.location.href='contact.html'">
+        <i class="fas fa-lightbulb"></i> ข้อเสนอแนะ/ร้องเรียน
+        <br>
+            <span>VOICE OF CUSTOMER</span>
+        </button>
+        </div>  
+        </div>
+
+        <div class="copyright">
+            &copy;2025 Copyright RSP Regional Science Park Northeast 2. All Rights Reserved
+        </div>
+    </footer>
+    
+    <script src="../assets/js/news.js"></script>
+    <script>
+        function toggleDropdown(event, dropdownId) {
+            event.preventDefault(); 
+            
+            document.querySelectorAll('.dropdown-content').forEach(function(el) {
+                if (el.id !== dropdownId) {
+                    el.classList.remove('show');
+                }
+            });
+
+            document.getElementById(dropdownId).classList.toggle('show');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown a') && !event.target.closest('.dropdown')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-out-back' 
+            });
+        });
+    </script>
+</body>
+
+</html>

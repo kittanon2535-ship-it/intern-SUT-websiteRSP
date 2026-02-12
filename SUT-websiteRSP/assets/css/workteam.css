@@ -1,0 +1,208 @@
+.scroll-animate {
+    opacity: 0;
+    transition: 
+        opacity 0.6s ease-out, 
+        transform 0.6s ease-out; 
+    will-change: opacity, transform; 
+}
+
+.scroll-animate.fade-in {
+    opacity: 1;
+    transform: none;
+}
+
+.team-member.scroll-animate {
+    transform: translateY(50px); 
+}
+
+.team-member.scroll-animate.slide-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.team-row-members .team-member:nth-child(1).slide-up { transition-delay: 0.1s; }
+.team-row-members .team-member:nth-child(2).slide-up { transition-delay: 0.2s; }
+.team-row-members .team-member:nth-child(3).slide-up { transition-delay: 0.3s; }
+.team-row-members .team-member:nth-child(4).slide-up { transition-delay: 0.4s; }
+.team-row-members .team-member:nth-child(5).slide-up { transition-delay: 0.5s; }
+
+.leader-highlight.scroll-animate {
+    transform: translateY(-50px); 
+}
+
+.leader-highlight.scroll-animate.slide-down {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.work-team-section {
+    background-color: transparent; 
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-page-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.team-banner {
+    display: inline-block;
+    background-color: #ff6a00;
+    color: rgb(255, 255, 255);
+    padding: 10px 40px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px; 
+}
+
+.team-title-block {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 60px;
+}
+
+.team-title-block h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.team-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 0;
+}
+
+.team-group {
+    margin-bottom: 80px;
+}
+
+.team-row-leader {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.team-row-members {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 20px; 
+}
+
+.team-member {
+    text-align: center;
+    max-width: 500px; 
+    flex: 1 1 calc(33.33% - 20px);
+    min-width: 200px;
+}
+
+.member-photo-wrapper {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    background-color: transparent;
+    padding: 0; 
+    box-shadow: none; 
+    position: relative;
+    overflow: visible; 
+}
+
+.member-photo-wrapper1 {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    overflow: visible;
+    background-color: transparent;
+    padding: 0; 
+    box-shadow: none; 
+    position: relative;
+}
+
+.member-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative; 
+    z-index: 2;        
+}
+
+.member-photo-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;        
+    height: auto;
+    z-index: 1;        
+    pointer-events: none;
+    display: block;  
+}
+
+.leader-highlight .member-photo-wrapper {
+    width: 300px; 
+    height: 300px;
+    background-color: #fdd83500; 
+}
+
+.leader-highlight .member-photo-wrapper1 {
+    width: 250px; 
+    height: 250px;
+    background-color: #fdd83500; 
+}
+
+.member-info {
+    margin-top: 10px;
+}
+
+.member-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 5px 0;
+}
+
+.leader-highlight .member-name {
+    font-size: 1.3rem;
+    color: #ff6a00; 
+}
+
+.member-position {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0;
+}
+
+.section-separator {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    margin: 50px 0;
+}
+
+@media (max-width: 768px) {
+    .team-row-members {
+        flex-direction: column; 
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .team-member {
+        max-width: 80%;
+        flex: 1 1 calc(50% - 20px);
+        flex: 1 1 auto;
+    }
+
+    .leader-highlight .member-photo-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+}

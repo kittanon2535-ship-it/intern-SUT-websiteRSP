@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title data-th="สร้าง Startup | RSP" data-en="Create Startup | RSP">สร้าง Startup | RSP</title>
+    <link rel="icon" type="image/png" href="../logo/NE2logo.png">
+    <link rel="stylesheet" href="../assets/css/servicelab.css">
+    <link rel="stylesheet" href="../assets/css/headerweb.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sui+Generis:wght@300;400;500;600;700&display=swap"rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sui Generis', sans-serif;
+            margin: 0; 
+        }
+ 
+        h2 {
+            font-weight: 700;
+        }
+
+        p {
+            font-weight: 400;
+        }
+
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lang-switch button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 1rem;
+            color: #333;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .lang-switch button.active {
+            color: #000000;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            top: 100%;
+            left: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .dropdown-content a {
+            color: white !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+        .dropdown-content.show {
+            display: block;
+        }
+
+        .detail-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 80px;
+            background: transparent;
+        }
+        
+        .back-button {
+            background: transparent;
+            color: rgb(46, 46, 46);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px; 
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-size: 1em; 
+        }
+        
+        .detail-title {
+            color: #3a3a3a; 
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <img src="../logo/LogoMHESI.png" alt="Extra Logo" class="logo1">
+            <img src="../logo/logo.png" alt="Logo" class="logo2" id="mainLogo">
+        </a>
+
+        <nav class="navigation">
+            <a href="../index.html" data-th="หน้าแรก" data-en="Home">หน้าแรก</a>
+
+            <div class="dropdown">
+                <a href="../pages/abousus.html" data-th="เกี่ยวกับเรา" data-en="About us"
+                    onclick="toggleDropdown(event, 'aboutUsDropdown')">เกี่ยวกับเรา <span style="font-size: 0.7em;">▼</span></a>
+                <ul class="dropdown-content" id="aboutUsDropdown">
+                    <li><a href="../pages/abousus.html">เกี่ยวกับเรา</a></li>
+                    <li><a href="../pages/workteam.html">คณะทำงาน</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <a href="../pages/service.html" data-th="การบริการและการสนับสนุน" data-en="Service&Support"
+                    onclick="toggleDropdown(event, 'serviceDropdown')">การบริการและการสนับสนุน <span
+                        style="font-size: 0.7em;">▼</span></a>
+                <ul class="dropdown-content" id="serviceDropdown">
+                    <li><a href="../pages/servicestartup.html">การสร้าง Startup</a></li>
+                    <li><a href="../pages/servicesme.html">ส่งเสริม SME</a></li>
+                    <li><a href="../pages/servicecommunity.html">สนับสนุนวิสาหกิจชุมชน</a></li>
+                    <li><a href="../pages/serviceenterprise.html">เพิ่มศักยภาพ Enterprise</a></li>
+                    <li><a href="../pages/servicelab.html">ห้องปฏิบัติการ</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <a href="../pages/metetingroom.html" data-th="พื้นที่การให้บริการ" data-en="Meeting Room"
+                    onclick="toggleDropdown(event, 'meetingRoomDropdown')">พื้นที่การให้บริการ <span
+                        style="font-size: 0.7em;">▼</span></a>
+                <ul class="dropdown-content" id="meetingRoomDropdown">
+                    <li><a href="../pages/meetingroomdetails.html">การให้บริการ</a></li>
+                    <li><a href="https://forms.gle/tcQNc4rg1ea9xnsM7">แบบประเมินความพึงพอใจห้องประชุม</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <a href="#" data-th="ติดต่อเสนอแนะ" data-en="Contact with us" onclick="toggleDropdown(event, 'contactDropdown')">ติดต่อเสนอแนะ <span style="font-size: 0.7em;">▼</span></a>
+                <ul class="dropdown-content" id="contactDropdown">
+                    <li><a href="../pages/contact.html">ติดต่อเรา</a></li>
+                    <li><a href="../pages/staffresearch.html">บุคลากร</a></li>
+                </ul>
+            </div> 
+
+            <div class="dropdown">
+                <a href="#" data-th="ข่าวสาร" data-en="News" onclick="toggleDropdown(event, 'newsDropdown')">ข่าวสาร <span style="font-size: 0.7em;">▼</span></a>
+                <ul class="dropdown-content" id="newsDropdown">
+                    <li><a href="../pages/news.html">ข่าวสารทั่วไป</a></li>
+                    <li><a href="../pages/newss.html">ประกาศ/คำสั่ง</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <a href="#" data-th="สำหรับเจ้าหน้าที่/สมาชิก" data-en="Staff/Member"
+                    onclick="toggleDropdown(event, 'staffMemberDropdown')">สำหรับเจ้าหน้าที่/สมาชิก <span
+                        style="font-size: 0.7em;">▼</span></a>
+                <ul class="dropdown-content" id="staffMemberDropdown">
+                    <li><a href="https://rspne2.sut.ac.th/mis/">แจ้งซ่อม</a></li>
+                    <li><a href="https://rspne2.sut.ac.th/mis/">ให้บริการพื้นที่</a></li>
+                    <li><a href="https://rspne2.sut.ac.th/mis/">จองห้องประชุม</a></li>
+                </ul>
+            </div>
+
+            <div class="lang-switch">
+                <button id="langTH" class="active">TH</button> | <button id="langEN">EN</button>
+            </div>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+
+  <div class="content-wrapper">
+        <div id="list-view">
+            <div class="lab-header-container" data-aos="fade-down" data-aos-delay="200"> 
+                <div class="header-text-group">
+                    <h1 class="header-title" data-aos="fade-left" data-aos-delay="1000">LABORATORY SERVICES</h1>
+                    <p class="header-subtitle"  data-aos="fade-left" data-aos-delay="1200">ศูนย์วิเคราะห์ทดสอบและโครงสร้างพื้นฐานระดับอุตสาหกรรม</p>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div id="project-list" class="lab-grid">
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card-image-wrapper">
+                            <img src="../workingspace/EMC.jpg" alt="EMC Lab">
+                            <div class="card-badge">Electronics</div>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-category">Electrical & Electronics</div>
+                            <h3 class="title-snippet">EMC Laboratory</h3>
+                            <p class="lab-description">บริการทดสอบความเข้ากันได้ทางแม่เหล็กไฟฟ้า เพื่อรับรองมาตรฐานผลิตภัณฑ์อิเล็กทรอนิกส์</p>
+                            <div class="card-footer">
+                                <span class="read-more">ดูรายการทดสอบ <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card-image-wrapper">
+                            <img src="../workingspace/UAS.jpg" alt="Drone Lab">
+                            <div class="card-badge">Aerospace</div>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-category">Aviation Technology</div>
+                            <h3 class="title-snippet">Drone & Unmanned Systems</h3>
+                            <p class="lab-description">ศูนย์พัฒนาระบบอากาศยานไร้คนขับ และการทดสอบประสิทธิภาพการบิน</p>
+                            <div class="card-footer">
+                                <span class="read-more">ดูรายละเอียดเครื่องมือ <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="card-image-wrapper">
+                            <img src="../workingspace/Bio.jpg" alt="Bio Lab">
+                            <div class="card-badge">Life Science</div>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-category">Bio-Technology</div>
+                            <h3 class="title-snippet">Biotechnology & Life Science</h3>
+                            <p class="lab-description">บริการตรวจวิเคราะห์ทางชีวภาพ การเพาะเลี้ยงเนื้อเยื่อ และการสกัดสารสำคัญ</p>
+                            <div class="card-footer">
+                                <span class="read-more">ปรึกษาการวิจัย <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="detail-view" style="display: none;">
+            <div class="detail-container">
+                <button class="back-button" onclick="showListView()">
+                    <i class="fas fa-arrow-left"></i> ย้อนกลับหน้าหลัก
+                </button>
+                <div id="detail-content">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="contact-info">
+                <h2>FOLLOW US</h2>
+
+                <p><strong>Regional Science Park Northeast 2, Suranaree University of Technology : RSP</strong></p>
+                <p>Regional Science Park (Northeast 2) Building, Nakhon Ratchasima</p>
+                <p>111, University Road, Suranaree Subdistrict, Mueang District, Nakhon Ratchasima Province 30000</p>
+
+                <div class="contact-detail">
+                    <i class="fas fa-phone-alt"></i> 044-223-600
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-envelope"></i> <a href="mailto:info@step.cmu.ac.th">nesp.nak@gmail.com</a>
+                </div>
+                <div class="contact-underline"></div>
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/RSPNortheast2/?locale=th_TH"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.google.com/maps/place/%E0%B8%AD%E0%B8%B8%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B9%8C+%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B8%B2/@14.8718256,102.0193393,17z/data=!4m14!1m7!3m6!1s0x311eada4f886aa9d:0xd9c56ab21fdcc998!2z4Lit4Li44LiX4Lii4Liy4LiZ4Lin4Li04LiX4Lii4Liy4Lio4Liy4Liq4LiV4Lij4LmMIOC4meC4hOC4o-C4o-C4suC4iuC4quC4teC4oeC4sg!8m2!3d14.8718256!4d102.0219142!16s%2Fg%2F11fnr2xvb_!3m5!1s0x311eada4f886aa9d:0xd9c56ab21fdcc998!8m2!3d14.8718256!4d102.0219142!16s%2Fg%2F11fnr2xvb_?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D"><i class="fas fa-map-marker-alt"></i></a>
+                </div>
+            </div>
+
+             <div class="footer-actions">
+    <button class="action-btn customer" onclick="window.location.href='contact.html'">
+        <i class="fas fa-lightbulb"></i> ข้อเสนอแนะ/ร้องเรียน
+        <br>
+            <span>VOICE OF CUSTOMER</span>
+        </button>
+        </div>  
+        </div>
+
+        <div class="copyright">
+            &copy;2025 Copyright RSP Regional Science Park Northeast 2. All Rights Reserved
+        </div>
+    </footer>
+    
+    <script src="../assets/js/servicelab.js"></script>
+    <script>
+        const labData = {
+            'EMC Laboratory': {
+                category: 'Electrical & Electronics',
+                image: '../workingspace/EMC.jpg',
+                objective: [
+                    { title: 'Standard Compliance', desc: 'เพื่อทดสอบและรับรองความเข้ากันได้ทางแม่เหล็กไฟฟ้า (EMC) ให้เป็นไปตามมาตรฐานสากล' },
+                    { title: 'Interference Protection', desc: 'เพื่อป้องกันปัญหาสัญญาณรบกวนระหว่างอุปกรณ์ขณะใช้งานจริง' },
+                    { title: 'Market Readiness', desc: 'เพื่อสนับสนุนผู้ประกอบการในการพัฒนาผลิตภัณฑ์ให้พร้อมก่อนออกสู่ตลาด' }
+                ],
+                tests: [
+                    { title: 'Conducted EMI/EMS', desc: 'ทดสอบการแพร่กระจายและภูมิคุ้มกันสัญญาณรบกวนผ่านสาย' },
+                    { title: 'Radiation EMI', desc: 'การแพร่กระจายสัญญาณรบกวนผ่านอากาศ' },
+                    { title: 'Radiation EMS', desc: 'ภูมิคุ้มกันต่อสัญญาณรบกวนผ่านอากาศ' }
+                ]
+            },
+            'Drone & Unmanned Systems': {
+                category: 'Aviation Technology',
+                image: '../workingspace/UAS.jpg',
+                objective: [
+                    { title: 'Flight Performance', desc: 'ศูนย์ทดสอบประสิทธิภาพการบินและระบบนำทางอัตโนมัติในระดับอุตสาหกรรม' },
+                    { title: 'Safety Standard', desc: 'วิจัยและพัฒนาระบบความปลอดภัยของอากาศยานไร้คนขับ' }
+                ],
+                tests: [
+                    { title: 'Performance & Calibration', desc: 'ทดสอบสมรรถนะการบิน และการรับน้ำหนัก' },
+                    { title: 'Autonomous System', desc: 'ทดสอบระบบปัญญาประดิษฐ์ในการควบคุมทิศทาง' }
+                ]
+            },
+            'Biotechnology & Life Science': {
+                category: 'Bio-Technology',
+                image: '../workingspace/Bio.jpg',
+                objective: [
+                    { title: 'Research & Development', desc: 'ให้บริการตรวจวิเคราะห์เชิงลึกทางชีวภาพและเคมี เพื่อการวิจัยและพัฒนาผลิตภัณฑ์' },
+                    { title: 'Innovation Support', desc: 'สนับสนุนการสกัดสารสำคัญจากวัตถุดิบธรรมชาติเพื่อเพิ่มมูลค่าสินค้า' }
+                ],
+                tests: [
+                    { title: 'Microbiological Testing', desc: 'การวิเคราะห์การปนเปื้อนและจุลินทรีย์' },
+                    { title: 'Bio-Chemical Analysis', desc: 'การสกัดและวิเคราะห์สารสำคัญจากธรรมชาติ' }
+                ]
+            }
+        };
+
+        function showDetail(labName) {
+            const data = labData[labName];
+            if(!data) return;
+
+            const detailContent = document.getElementById('detail-content');
+            detailContent.innerHTML = `
+                <div class="detail-header">
+                    <div class="category-tag">${data.category}</div>
+                    <h1 class="detail-title">${labName}</h1>
+                </div>
+                <div class="detail-hero-image">
+                    <img src="${data.image}" alt="${labName}">
+                </div>
+                <div class="detail-info-grid">
+            <div class="info-section">
+                <h3><i class="fas fa-bullseye"></i> วัตถุประสงค์</h3>
+                <div class="objective-container">
+                    ${data.objective.map(obj => `
+                        <div style="margin-bottom: 15px;">
+                            <strong style="color: #f26522; display: block; font-size: 1.1em;">• ${obj.title}</strong>
+                            <span style="color: #666; padding-left: 15px; display: inline-block;">${obj.desc}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+                    <div class="info-section">
+                        <h3><i class="fas fa-microscope"></i> รายการทดสอบหลัก</h3>
+                        <div class="test-list">
+                            ${data.tests.map(test => `
+                                <div class="test-item">
+                                    <strong>${test.title}</strong>
+                                    <span>${test.desc}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('list-view').style.display = 'none';
+            document.getElementById('detail-view').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function showListView() {
+            document.getElementById('detail-view').style.display = 'none';
+            document.getElementById('list-view').style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.service-card').forEach(card => {
+                const title = card.querySelector('.title-snippet').innerText;
+                const btn = card.querySelector('.card-footer');
+                btn.onclick = () => showDetail(title);
+            });
+        });
+
+        function toggleDropdown(event, dropdownId) {
+            event.preventDefault(); 
+            document.querySelectorAll('.dropdown-content').forEach(el => {
+                if (el.id !== dropdownId) el.classList.remove('show');
+            });
+            document.getElementById(dropdownId).classList.toggle('show');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown a') && !event.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown-content').forEach(d => d.classList.remove('show'));
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-out-back' 
+            });
+        });
+    </script>
+</body>
+</html>

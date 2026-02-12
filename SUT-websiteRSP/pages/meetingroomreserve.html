@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>อุทยานวิทยาศาสตร์ภูมิภาค ภาคตะวันออกเฉียงเหนือตอนล่าง (จังหวัดนครราชสีมา)</title>
+    <link rel="icon" type="image/png" href="logo/NE2logo.png">
+    <link rel="stylesheet" href="meetingreserve.css">
+    <link rel="stylesheet" href="headerweb.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sui Generis:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sui Generis', sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            font-weight: 700;
+        }
+
+        p {
+            font-weight: 400;
+        }
+
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lang-switch button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 1rem;
+            color: #333;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .lang-switch button.active {
+            color: #007bff;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            position: relative; 
+            display: inline-block; 
+        }
+
+        .dropdown-content {
+            display: none; 
+            position: absolute;
+            background-color: #333; 
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            top: 100%; 
+            left: 0;
+            padding: 0;
+            list-style: none; 
+        }
+
+        .dropdown-content a {
+            color: white !important; 
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            white-space: nowrap; 
+        }
+
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+        .dropdown-content.show {
+            display: block; 
+        }
+        .meeting-details {
+            max-width: 800px; 
+            margin: auto; 
+            padding: 20px;
+            background-color: transparent;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 60px;
+            margin-top: 50px;
+        }
+        .meeting-room-image {
+            width: 100%; 
+            height: auto;
+            display: block; 
+            margin: 20px 0;
+            border-radius: 8px; 
+        }
+        .meeting-room-name {
+            font-size: 1.5em;
+            color: #ff5917;
+            border-bottom: 2px solid #ff4800;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+    <body>
+
+<header>
+    <a href="#" class="logo">
+        <img src="LogoMHESI.png" alt="Extra Logo" class="logo1">
+        <img src="logo.png" alt="Logo" class="logo2" id="mainLogo">
+    </a>
+
+    <nav class="navigation">
+        <a href="./" data-th="หน้าแรก" data-en="Home">หน้าแรก</a>
+        
+        <div class="dropdown">
+                <a href="abousus.html" data-th="เกี่ยวกับเรา" data-en="About us" onclick="toggleDropdown(event, 'aboutUsDropdown')">เกี่ยวกับเรา <span style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="aboutUsDropdown">
+                    <li><a href="abousus.html">เกี่ยวกับเรา</a></li>
+                    <li><a href="workteam.html">คณะทำงาน</a></li>
+                </ul>
+            </div>
+        
+        <div class="dropdown">
+                <a href="service.html" data-th="การบริการและการสนับสนุน" data-en="Service&Support" onclick="toggleDropdown(event, 'serviceDropdown')">การบริการและการสนับสนุน <span style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="serviceDropdown">
+                    <li><a href="servicestartup.html">การสร้าง Startup</a></li>
+                    <li><a href="servicesme.html">ส่งเสริม SME</a></li>
+                    <li><a href="servicecommunity.html">สนับสนุนวิสาหกิจชุมชน</a></li>
+                    <li><a href="serviceenterprise.html">เพิ่มศักยภาพ Enterprise</a></li>
+                    <li><a href="servicelab.html">ห้องปฏิบัติการ</a></li>
+                </ul>
+            </div>
+
+        <div class="dropdown">
+                <a href="metetingroom.html" data-th="พื้นที่การให้บริการ" data-en="Meeting Room" onclick="toggleDropdown(event, 'meetingRoomDropdown')">พื้นที่การให้บริการ <span style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="meetingRoomDropdown">
+                    <li><a href="meetingroomdetails.html">การให้บริการ</a></li>
+                    <li><a href="meetingroomreserve.html">ติดต่อสำรองห้องประชุม</a></li>
+                    <li><a href="https://forms.gle/tcQNc4rg1ea9xnsM7">แบบประเมินความพึงพอใจห้องประชุม</a></li>
+                </ul>
+            </div>
+        
+        <div class="dropdown">
+                <a href="#" data-th="ติดต่อเสนอแนะ" data-en="Contact with us" onclick="toggleDropdown(event, 'contactDropdown')">ติดต่อเสนอแนะ <span style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="contactDropdown">
+                    <li><a href="contact.html">ติดต่อเรา</a></li>
+                    <li><a href="staffresearch.html">บุคลากร</a></li>
+                </ul>
+            </div>
+
+        <div class="dropdown">
+                <a href="#" data-th="ข่าวสาร" data-en="News" onclick="toggleDropdown(event, 'newsDropdown')">ข่าวสาร <span style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="newsDropdown">
+                    <li><a href="news.html">ข่าวสารทั่วไป</a></li>
+                    <li><a href="newss.html">ประกาศ/คำสั่ง</a></li>
+                </ul>
+            </div>
+        
+        <div class="dropdown">
+                <a href="#" data-th="สำหรับเจ้าหน้าที่/สมาชิก" data-en="Staff/Member" onclick="toggleDropdown(event, 'staffMemberDropdown')">สำหรับเจ้าหน้าที่/สมาชิก <span style="font-size: 0.7em;"></span></a>
+                <ul class="dropdown-content" id="staffMemberDropdown">
+                    <li><a href="https://rspne2.sut.ac.th/mis/">แจ้งซ่อม</a></li>
+                    <li><a href="https://rspne2.sut.ac.th/mis/">ให้บริการพื้นที่</a></li>
+                    <li><a href="https://rspne2.sut.ac.th/mis/">จองห้องประชุม</a></li>
+                </ul>
+            </div>
+
+        <div class="lang-switch">
+            <button id="langTH" class="active">TH</button> | <button id="langEN">EN</button>
+        </div>
+    </nav> 
+    <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+</header>
+
+<body>
+
+    <div class="meeting-details">
+        <h1>ติดต่อสำรองห้องประชุม</h1>
+        
+        <h2 class="meeting-room-name">ติดต่อได้ที่ :</h2>
+        <img src="NE21.jpg" alt="รูปห้องประชุม 1" class="meeting-room-image">
+
+    </div>
+
+</body>
+
+<footer>
+    <div class="footer-container">
+        <div class="contact-info">
+            <h2>FOLLOW US</h2>
+            
+            <p><strong>Regional Science Park Northeast 2, Suranaree University of Technology : RSP</strong></p>
+            <p>Regional Science Park (Northeast 2) Building, Nakhon Ratchasima</p>
+            <p>111, University Road, Suranaree Subdistrict, Mueang District, Nakhon Ratchasima Province 30000</p>
+
+            <div class="contact-detail">
+                <i class="fas fa-phone-alt"></i> 044-223-600
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-envelope"></i> <a href="mailto:info@step.cmu.ac.th">nesp.nak@gmail.com</a>
+            </div>
+            <div class="contact-underline"></div>
+
+            <div class="social-icons">
+                    <a href="https://www.facebook.com/RSPNortheast2/?locale=th_TH"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.google.com/maps/place/%E0%B8%AD%E0%B8%B8%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B9%8C+%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B8%B2/@14.8718256,102.0193393,17z/data=!4m14!1m7!3m6!1s0x311eada4f886aa9d:0xd9c56ab21fdcc998!2z4Lit4Li44LiX4Lii4Liy4LiZ4Lin4Li04LiX4Lii4Liy4Lio4Liy4Liq4LiV4Lij4LmMIOC4meC4hOC4o-C4o-C4suC4iuC4quC4teC4oeC4sg!8m2!3d14.8718256!4d102.0219142!16s%2Fg%2F11fnr2xvb_!3m5!1s0x311eada4f886aa9d:0xd9c56ab21fdcc998!8m2!3d14.8718256!4d102.0219142!16s%2Fg%2F11fnr2xvb_?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D"><i class="fas fa-map-marker-alt"></i></a>
+                </div>
+            </div>
+
+         <div class="footer-actions">
+    <button class="action-btn customer" onclick="window.location.href='contact.html'">
+        <i class="fas fa-lightbulb"></i> ข้อเสนอแนะ/ร้องเรียน
+        <br>
+            <span>VOICE OF CUSTOMER</span>
+        </button>
+        </div>  
+    </div>
+
+    <div class="copyright">
+        &copy;2025 Copyright RSP Regional Science Park Northeast 2. All Rights Reserved
+    </div>
+</footer>
+    <script>
+        function toggleMenu() {
+            const navList = document.querySelector('.nav-list');
+            navList.classList.toggle('active');
+        }
+    </script>
+    <script>
+        function toggleDropdown(event, dropdownId) {
+            event.preventDefault(); 
+            document.querySelectorAll('.dropdown-content').forEach(function(el) {
+                if (el.id !== dropdownId) {
+                    el.classList.remove('show');
+                }
+            });
+            document.getElementById(dropdownId).classList.toggle('show');
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown a')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+        <script src="meetingreserve.js"></script>
+    </body>
+    </html>
+

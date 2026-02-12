@@ -1,0 +1,175 @@
+.contact-page-container {
+    max-width: 1200px;
+    margin-top: 5%;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+}
+
+.venue-booking-container {
+    margin-bottom: 100px;
+}
+
+.premium-label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.gold-line {
+    display: inline-block;
+    width: 50px;
+    height: 2px;
+    background-color: #ff6a00;
+}
+
+.label-text {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #888;
+}
+
+.display-title {
+    font-size: clamp(3rem, 8vw, 5rem);
+    line-height: 0.9;
+    font-weight: 800;
+    color: #222;
+    margin: 10px 0;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.bottom-accent {
+    width: 450px;
+    height: 6px;
+    background-color: #ff6a00;
+    margin-top: 15px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background: transparent;
+}
+
+.search-glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(255,255,255,0.5);
+    margin-bottom: 40px;
+}
+
+.search-box h2 {
+    font-size: 1.5rem;
+    color: #222;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.input-group {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff6a00;
+    font-size: 1.2rem;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 18px 20px 18px 55px; 
+    border: 2px solid #eee;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    background: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+#searchInput:focus {
+    border-color: #ff6a00;
+    box-shadow: 0 10px 25px rgba(255, 106, 0, 0.1);
+    outline: none;
+}
+
+.person-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px 35px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 5px solid transparent;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.person-card:hover {
+    transform: translateY(-3px);
+    border-left: 5px solid #ff6a00;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.card-info strong {
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.card-info .position {
+    color: #ff6a00;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.card-contact {
+    text-align: right;
+    border-left: 1px solid #eee;
+    padding-left: 30px;
+}
+
+.card-contact span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.card-contact i {
+    color: #ff6a00;
+    width: 20px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .person-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .card-contact {
+        text-align: left;
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid #eee;
+        padding-top: 15px;
+        width: 100%;
+    }
+    .card-contact span { justify-content: flex-start; }
+}

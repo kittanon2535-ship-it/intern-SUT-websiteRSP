@@ -1,0 +1,220 @@
+body {
+    background-color: #fcfcfc;
+    font-family: 'Sui Generis', sans-serif;
+}
+
+.content-wrapper {
+    padding: 110px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.lab-header-container {
+    border-left: 6px solid #f26522;
+    padding-left: 25px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.header-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.search-bar {
+    display: flex;
+    background: #fff;
+    padding: 5px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-bar input {
+    border: none;
+    padding: 10px 15px;
+    flex-grow: 1;
+    outline: none;
+}
+
+.search-button {
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-button:hover { background: #f26522; }
+.detail-hero-image img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.detail-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.category-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background: #f26522;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8em;
+    margin-bottom: 10px;
+}
+
+.test-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-left: 5px solid #f26522;
+}
+
+.test-item strong {
+    display: block;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .detail-info-grid { grid-template-columns: 1fr; }
+    .detail-container { padding: 20px; }
+}
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
+    align-items: stretch;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(242, 101, 34, 0.3);
+}
+
+.card-image-wrapper {
+    position: relative;
+    height: 220px;
+    overflow: hidden; 
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.card-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    backdrop-filter: blur(5px);
+}
+
+.service-card-content {
+    padding: 25px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+.service-category {
+    color: #f26522;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.title-snippet {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.mini-service-list {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.mini-service-list li {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.mini-service-list li::before {
+    content: "•";
+    color: #f26522;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.read-more {
+    font-weight: 600;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+    margin-top: 90px;
+}
+
+.service-card:hover .read-more {
+    color: #f26522;
+}
+
+@media (max-width: 768px) {
+    .header-title { font-size: 1.8rem; }
+    .lab-header-container { flex-direction: column; align-items: flex-start; }
+}
