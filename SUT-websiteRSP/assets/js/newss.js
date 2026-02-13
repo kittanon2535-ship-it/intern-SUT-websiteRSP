@@ -1,5 +1,9 @@
+// --- Configuration & Elements ---
 const API_URL = 'https://sut-park-backend.onrender.com/public/news'; 
 const BACKEND_URL = 'https://sut-park-backend.onrender.com';
+const SCROLL_THRESHOLD = 50; 
+const LOGO_NORMAL = '../logo/logo.png';
+const LOGO_STICKY = '../logo/Logo2.png';
 
 const newsListContainer = document.getElementById('project-list'); 
 const statusMessage = document.getElementById('status-message');
@@ -10,7 +14,39 @@ const searchToggle = document.querySelector('.search-icon-btn');
 const listView = document.getElementById('list-view');
 const detailView = document.getElementById('detail-view');
 
+const langTH = document.getElementById('langTH');
+const langEN = document.getElementById('langEN');
+
 let allNews = []; 
+
+// --- 1. ฟังก์ชันจัดการ Header (ที่แยกออกมา) ---
+
+/**
+ * จัดการการเปลี่ยนสี Header และสลับโลโก้เมื่อ Scroll
+ */
+function handleHeaderScroll() {
+    const header = document.querySelector('header');
+    const mainLogo = document.getElementById('mainLogo');
+
+    if (!header || !mainLogo) return;
+
+    const isSticky = window.scrollY > SCROLL_THRESHOLD;
+
+    // เปลี่ยนสีพื้นหลัง (ผ่าน class sticky ใน CSS)
+    if (isSticky) {
+        header.classList.add('sticky');
+    } else {
+        header.classList.remove('sticky');
+    }
+
+    // สลับรูปโลโก้
+    const targetLogo = isSticky ? LOGO_STICKY : LOGO_NORMAL;
+    if (mainLogo.getAttribute('src') !== targetLogo) {
+        mainLogo.src = targetLogo;
+    }
+}
+
+// --- 2. ฟังก์ชันจัดการข้อมูลและแสดงผล (News Logic) ---
 
 function formatThaiDate(dateString) {
     if (!dateString || dateString.startsWith('0000')) return 'ไม่ระบุวันที่';
@@ -28,17 +64,9 @@ function getFileUrl(path) {
     return `${BACKEND_URL}/${cleanPath}`;
 }
 
-function checkFileType(url) {
-    if (!url) return 'none';
-    const lowerUrl = url.toLowerCase();
-    if (lowerUrl.endsWith('.pdf')) return 'pdf';
-    if (lowerUrl.match(/\.(jpg|jpeg|png|gif|webp)$/)) return 'image';
-    return 'other';
-}
-
 function renderSkeletons() {
     if (!newsListContainer) return;
-    const skeletonHTML = `
+    newsListContainer.innerHTML = `
         <div class="service-card skeleton-active">
             <div class="skeleton-image-box"></div>
             <div class="service-card-content">
@@ -49,7 +77,6 @@ function renderSkeletons() {
             </div>
         </div>
     `.repeat(4);
-    newsListContainer.innerHTML = skeletonHTML;
 }
 
 function createNewsCard(item, currentLang = 'th') {
@@ -166,6 +193,8 @@ function renderNewsList(items, searchTerm = '') {
     filtered.forEach(item => newsListContainer.appendChild(createNewsCard(item, currentLang)));
 }
 
+// --- 3. Event Listeners & Lifecycle ---
+
 function handleSearchAction() {
     const isSearchActive = searchWrapper.classList.contains('active');
     if (!isSearchActive) {
@@ -200,6 +229,27 @@ function switchLanguage(lang) {
     renderNewsList(allNews, searchInput.value);
 }
 
+if(langTH && langEN) {
+    langTH.addEventListener('click', () => switchLanguage('th'));
+    langEN.addEventListener('click', () => switchLanguage('en'));
+}
+
+function switchLanguage(lang) {
+    document.querySelectorAll('[data-th]').forEach(el => {
+        const translation = el.getAttribute(`data-${lang}`);
+        if (translation) {
+             el.textContent = translation;
+        }
+    });
+
+    document.documentElement.lang = lang;
+    if(langTH) langTH.classList.toggle('active', lang === 'th');
+    if(langEN) langEN.classList.toggle('active', lang === 'en');
+}
+// Scroll Event
+window.addEventListener('scroll', handleHeaderScroll);
+
+// Search Events
 searchToggle?.addEventListener('click', (e) => {
     e.stopPropagation();
     handleSearchAction();
@@ -215,7 +265,9 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Init
 document.addEventListener('DOMContentLoaded', () => {
+    handleHeaderScroll(); // รันครั้งแรกเผื่อหน้าจอโหลดมาแล้วไม่ได้อยู่บนสุด
     switchLanguage('th');
     fetchAndRenderNews();
 });

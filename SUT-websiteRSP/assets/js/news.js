@@ -15,6 +15,9 @@ const modalImg = document.getElementById("img01");
 const captionText = document.getElementById("caption");
 const closeModal = document.querySelector(".close");
 
+const langTH = document.getElementById('langTH');
+const langEN = document.getElementById('langEN');
+
 let allNews = []; 
 let currentGalleryImages = []; 
 
@@ -29,7 +32,7 @@ window.addEventListener('scroll', function() {
         mainLogo.src = '../logo/Logo2.png';
     } else {
         header.classList.remove('sticky'); 
-        mainLogo.src = '../logo/Logo.png';
+        mainLogo.src = '../logo/logo.png';
     }
 });
 
@@ -207,6 +210,24 @@ function switchLanguage(lang) {
         el.innerText = el.getAttribute(`data-${lang}`);
     });
     renderNews(allNews, searchInput.value);
+}
+
+if(langTH && langEN) {
+    langTH.addEventListener('click', () => switchLanguage('th'));
+    langEN.addEventListener('click', () => switchLanguage('en'));
+}
+
+function switchLanguage(lang) {
+    document.querySelectorAll('[data-th]').forEach(el => {
+        const translation = el.getAttribute(`data-${lang}`);
+        if (translation) {
+             el.textContent = translation;
+        }
+    });
+
+    document.documentElement.lang = lang;
+    if(langTH) langTH.classList.toggle('active', lang === 'th');
+    if(langEN) langEN.classList.toggle('active', lang === 'en');
 }
 
 function handleSearchAction() {
